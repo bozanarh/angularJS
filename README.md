@@ -1,4 +1,4 @@
-# angulerJS
+# angularJS
 My angularJS examples that I created while learning angular
 
 ### [template](https://github.com/bozanarh/angularJS/tree/master/template)
