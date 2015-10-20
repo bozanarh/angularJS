@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+<style>
+	.show-scope-demo .ng-scope  {
+  		border: 1px solid red;
+ 		 margin: 3px;
+	}
+</style>
+<body>
+	<div class="show-scope-demo">
+		<div ng-controller="greetCtrl">
+			Hello {{ name }} !
+		</div>
+
+		<div ng-controller="listCtrl">
+			<ol>
+			<li ng-repeat="name in names">{{ name }} from {{ department }}</li>
+			</ol>
+		</div>
+	</div>
+	<script src="myCtrl.js"></script>
+</body>
+</html>
