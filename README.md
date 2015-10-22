@@ -19,7 +19,7 @@ My angularJS examples that I created while learning angular
 - shows hot to call my very specific listener when certian variable changes
 - note you use "scope" without dollar in the $watch()
 
-### [watch](https://github.com/bozanarh/angularJS/tree/master/grid)
+### [grid](https://github.com/bozanarh/angularJS/tree/master/grid)
 - simple grid example - ilustrates very basic usage of ui-grid
 - uses static data
 
