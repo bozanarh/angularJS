@@ -23,3 +23,16 @@ My angularJS examples that I created while learning angular
 - simple grid example - ilustrates very basic usage of ui-grid
 - uses static data
 
+### [eventHandling](https://github.com/bozanarh/angularJS/tree/master/eventHandling)
+- show how event handling with buttons in a table works
+- uses static data
+
+### [simplest_grid](https://github.com/bozanarh/angularJS/tree/master/simplest_grid)
+- the simplest grid example with static data
+
+### [grid_with_http_get](https://github.com/bozanarh/angularJS/tree/master/grid_with_http_get)
+- grid example - ilustrates how to obtain data from server through http get
+
+### [grid_with_sorting](https://github.com/bozanarh/angularJS/tree/master/grid_with_sorting)
+- grid example - ilustrates how to do sorting on columns
+
