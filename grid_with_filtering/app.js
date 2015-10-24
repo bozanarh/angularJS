@@ -1,6 +1,10 @@
+"use strict";
+
 var app = angular.module('app', ['ngAnimate', 'ngTouch', 'ui.grid', 'ui.grid.edit']);
 //app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($scope, $http, uiGridConstants) {
 app.controller('MainCtrl', ['$scope', 'uiGridConstants', function ($scope, uiGridConstants) {
+  $scope.numColumns = 0;
+  $scope.filteredRows = [];
   $scope.gridOptions1 = {
     enableSorting: true,
     enableFiltering: true,
@@ -10,20 +14,23 @@ app.controller('MainCtrl', ['$scope', 'uiGridConstants', function ($scope, uiGri
     onRegisterApi: function( gridApi ) {
       $scope.grid1Api = gridApi;
     },
-
     //look at this: http://plnkr.co/edit/2hXm3ApM39e7YyyI79qb?p=preview
     columnDefs: [
       { field: 'name', displayName: 'Name', headerCellClass: 'header', cellClass: 'header' },
       { field: 'gender', displayName: 'Gender', headerCellClass: 'header' },
       { field: 'hasKids', type: 'boolean', displayName: 'Has Kids', headerCellClass: 'header', cellClass: 'header' },
-      { field: 'isCitizen', type: 'boolean', headerCellClass: 'header', cellClass: 'header'   },
+      { field: 'isCitizen', type: 'boolean', displayName: 'Is Citizen',headerCellClass: 'header', cellClass: 'header' },
       { field: 'company', enableSorting: false, headerCellClass: 'header', cellClass: 'header'  }
     ],
     
   };
   
   $scope.showFiltered = function() {
-    alert("soon... soon...");
+    var _renderedRows = $scope.grid1Api.grid.renderContainers.body.renderedRows;
+    //$scope.filteredRows=_renderedRows;
+    $scope.filteredRows = $scope.grid1Api.core.getVisibleRows($scope.grid1Api.grid);
+    $scope.numColumns = $scope.filteredRows.length;
+    console.log($scope.filteredRows);
   }
  
 

@@ -19,6 +19,8 @@
       <button id='showFiltered' ng-click="showFiltered()" class="btn btn-success">Show Filtered</button>
       <br>
       <div id="grid1" ui-grid="gridOptions1" ui-grid-edit class="grid"></div>
+      <p>There are {{ numColumns }} filtered columns:</p>
+      <p ng-repeat="x in filteredRows">{{ x.entity}}</p>
     </div>
    <script src="app.js"></script>
   </body>
