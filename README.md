@@ -1,6 +1,19 @@
 # angularJS
 My angularJS examples that I created while learning angular
 
+## Testing client
+  - Use *grunt* 
+    - run existing example like this (e.g).:  __grunt connect:ex1__
+  - To add new examples edit: _Gruntfile.js_ and add new section in connect
+  - TODO: add:
+    - jshint
+    - unit testing
+
+## You need data from server
+  - see [server_sim](https://github.com/bozanarh/angularJS/tree/master/server_sim)
+
+## Code examples:
+
 ### [template](https://github.com/bozanarh/angularJS/tree/master/template)
 - begining of the world -> Hello world example
 
