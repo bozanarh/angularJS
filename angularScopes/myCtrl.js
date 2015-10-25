@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module("myApp", [])
     .controller("greetCtrl", function($scope, $rootScope) {
 	    $scope.name="World";

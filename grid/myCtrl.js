@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module("app", ['ui.grid'])
     .controller("MainCtrl", function($scope) {
 	    $scope.txt = "Hello Bozana";

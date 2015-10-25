@@ -1,3 +1,5 @@
+"use strict";
+
 var app = angular.module('app', ['ngAnimate', 'ngTouch', 'ui.grid']);
 app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($scope, $http, uiGridConstants) {
   $scope.gridOptions1 = {

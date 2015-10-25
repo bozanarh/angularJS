@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module('myApp', [])
 	.controller('myCtrl', function($scope, $http) {
 		$http.get("http://www.w3schools.com/angular/customers.php")
