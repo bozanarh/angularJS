@@ -32,6 +32,6 @@ Use this to simulate server response back to the client
 
 ### PUT call
  - test from curl:
-    -_curl -d '[{"a":"1"}, {"b":"2"}, {"c":"3"}]' -H "Content-Type: application/json" -X PUT http://127.0.0.1:7001/_ 
+    - _curl -d '[{"a":"1"}, {"b":"2"}, {"c":"3"}]' -H "Content-Type: application/json" -X PUT http://127.0.0.1:7001/_ 
 
 
