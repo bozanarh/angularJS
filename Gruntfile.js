@@ -3,45 +3,49 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         connect: {
-            ex1: {
+            template: {
                 port: 8081,
                 base: 'template/'
             },
-            ex2: {
+            angularScopes: {
                 port: 8081,
                 base: 'angularScopes/'
             },
-            ex3: {
+            sticky: {
                 port: 8081,
                 base: 'sticky/'
             },
-            ex4: {
+            watch: {
                 port: 8081,
                 base: 'watch/'
             },
-            ex5: {
+            grid: {
                 port: 8081,
                 base: 'grid/'
             },
-            ex6: {
+            eventHandling: {
                 port: 8081,
                 base: 'eventHandling/'
             },
-            ex7: {
+            simplest_grid: {
                 port: 8081,
                 base: 'simplest_grid/'
             },
-            ex8: {
+            grid_with_http: {
                 port: 8081,
-                base: 'grid_with_http_get/'
+                base: 'grid_with_http/'
             },
-            ex9: {
+            grid_with_sorting: {
                 port: 8081,
                 base: 'grid_with_sorting/'
             },
-            ex10: {
+            grid_with_filtering: {
                 port: 8081,
                 base: 'grid_with_filtering/'
+            },
+            grid_with_editing: {
+                port: 8081,
+                base: 'grid_with_editing/'
             }
         }
     });
