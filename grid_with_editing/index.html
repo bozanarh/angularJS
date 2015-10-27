@@ -21,8 +21,8 @@
       <div id="grid1" ui-grid="gridOptions1" ui-grid-edit class="grid"></div>
       <p><b>There are {{ numColumns }} filtered columns:</b></p>
       <p ng-repeat="x in filteredRows">{{ x.entity}}</p>
-      <p><b>Filtered and then changed Data:</b></p>
-      <p ng-repeat="d in changedData">{{ d }}</p>
+      <p><b>Data saved on server:</b></p>
+      <p ng-repeat="d in savedData">{{ d }}</p>
     </div>
    <script src="app.js"></script>
   </body>

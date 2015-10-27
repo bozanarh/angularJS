@@ -2,10 +2,11 @@
 
 var app = angular.module('app', ['ngAnimate', 'ngTouch', 'ui.grid', 'ui.grid.edit']);
 //app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($scope, $http, uiGridConstants) {
-app.controller('MainCtrl', ['$scope', 'uiGridConstants', function ($scope, uiGridConstants) {
+app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($scope, $http, uiGridConstants) {
     $scope.numColumns = 0;
     $scope.filteredRows = [];
     $scope.changedData = [];
+    $scope.savedData = [];
 
     $scope.selectAll = function(event){
         //alert("Cao Papane all!");
@@ -25,15 +26,31 @@ app.controller('MainCtrl', ['$scope', 'uiGridConstants', function ($scope, uiGri
                 $scope.changedData.push(obj);
             }
         }
+        var config = {
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept':'application/json'
+                }
+            }
+        $scope.saveData($scope.changedData, config);
         console.dir($scope.changedData);
     };
    
+    $scope.saveData = function(data, config){
+       $http.put('http://localhost:7001/api/v1/models', data)
+      .then(function(resp) {
+        $scope.savedData = resp.data;
+      }, function(resp){
+        alert("Failed to save new data");
+      });
+    }
 
     $scope.selectOne = function(row){
         //alert("Cao Papane!" );
         $scope.changedData.length=0;
         console.dir(row.entity);
         $scope.changedData.push(row.entity);
+        $scope.saveData($scope.changedData);
     };
 
 
@@ -49,14 +66,40 @@ app.controller('MainCtrl', ['$scope', 'uiGridConstants', function ($scope, uiGri
     //look at this: http://plnkr.co/edit/2hXm3ApM39e7YyyI79qb?p=preview
     columnDefs: [
         //{ field: 'id', visible: 'false', type: 'boolean' },
-        { field: 'name', displayName: 'Name', headerCellClass: 'header', cellClass: 'header' },
-        { field: 'gender', displayName: 'Gender', headerCellClass: 'header' },
-        { field: 'hasKids', field: 'hasKids', type: 'boolean', displayName: 'Has Kids', headerCellClass: 'header', cellClass: 'header',
-            headerCellTemplate: '<div style="text-align: center"></br>{{col.displayName}}</br><input type="checkbox" ng-model="allSelected" ng-click="grid.appScope.selectAll($event)"></div>',
-            cellTemplate: '<div style="text-align: center"><input type="checkbox" style="text-align:center;" ng-model="row.entity.hasKids" ng-click="$event.stopPropagation();grid.appScope.selectOne(row)"></div>'    
+        { 
+            field: 'name', 
+            displayName: 'Name', 
+            headerCellClass: 'header', 
+            cellClass: 'header' 
         },
-        { field: 'isCitizen', type: 'boolean', displayName: 'Is Citizen',headerCellClass: 'header', cellClass: 'header' },  
-        { field: 'company', enableSorting: false, headerCellClass: 'header', cellClass: 'header'  }
+        { 
+            field: 'gender', 
+            displayName: 'Gender', 
+            headerCellClass: 'header' 
+        },
+        { 
+            field: 'hasKids', 
+            type: 'boolean', 
+            enableFiltering: true,
+            displayName: 'Has Kids', 
+            headerCellClass: 'header', 
+            cellClass: 'header',
+            headerCellTemplate: "headerCellTemplate2.html",
+            cellTemplate: "cellTemplate.html",
+        },
+        { 
+            field: 'isCitizen', 
+            type: 'boolean', 
+            displayName: 'Is Citizen',
+            headerCellClass: 'header', 
+            cellClass: 'header' 
+        },  
+        { 
+            field: 'company', 
+            enableSorting: false, 
+            headerCellClass: 'header', 
+            cellClass: 'header'  
+        }
     ],
   };
   

@@ -1,3 +1,6 @@
-<div class="ngCellText" ng-class="collClass"> 
-     <input type="checkbox" ng-click="toggleHasKids($index, $event)"> 
+<div style="text-align: center">
+	<input type="checkbox" 
+		style="text-align:center;" 
+		ng-model="row.entity.hasKids" 
+		ng-click="$event.stopPropagation();grid.appScope.selectOne(row)">
 </div>
