@@ -27,6 +27,7 @@ Use this to simulate server response back to the client
     - _curl -H Content-Type:application/json -H Accept:application/json  -X GET  http://localhost:7001/_
 
 ### POST call
+ - make sure you are adding both POST and OPTIONS route, because Chrome is sending OPTIONS before POST behind the scene.
  - test from curl:
     - _curl -d '[{"a":"1"}, {"b":"2"}, {"c":"3"}]' -H "Content-Type: application/json" -X POST http://127.0.0.1:7001/_
 
