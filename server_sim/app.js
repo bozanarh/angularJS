@@ -37,7 +37,7 @@ app.post('/', function (req, res) {
 	res.send(req.body);
 });
 
-//POST CALL, we sand back whatever we get
+//OPTIONS CALL, we sand back whatever we get
 app.options('/api/v1/models', function (req, res) {
 	console.log("OPTIONS /api/v1/models");
     res.header('Access-Control-Allow-Headers' , 'Content-Type' );
@@ -50,6 +50,16 @@ app.options('/api/v1/models', function (req, res) {
 //POST CALL, we sand back whatever we get
 app.post('/api/v1/models', function (req, res) {
 	console.log("POST /api/v1/models");
+    res.header('Access-Control-Allow-Headers' , 'Content-Type' );
+    res.header('Access-Control-Allow-Methods' , 'POST, GET, OPTIONS, PUT' );
+    res.header('Access-Control-Allow-Origin' , '*' );
+	console.dir(req.body);
+	res.send(req.body);
+});
+
+//PUT CALL, we sand back whatever we get
+app.put('/api/v1/models', function (req, res) {
+	console.log("PUT /api/v1/models");
     res.header('Access-Control-Allow-Headers' , 'Content-Type' );
     res.header('Access-Control-Allow-Methods' , 'POST, GET, OPTIONS, PUT' );
     res.header('Access-Control-Allow-Origin' , '*' );
