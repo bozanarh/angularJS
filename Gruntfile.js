@@ -7,6 +7,10 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'template/'
             },
+            bindings: {
+                port: 8081,
+                base: 'bindings/'
+            },
             angularScopes: {
                 port: 8081,
                 base: 'angularScopes/'
@@ -46,6 +50,38 @@ module.exports = function(grunt) {
             grid_with_editing: {
                 port: 8081,
                 base: 'grid_with_editing/'
+            },
+            simple_directive: {
+                port: 8081,
+                base: 'simple_directive/'
+            },
+            simple_directive2: {
+                port: 8081,
+                base: 'simple_directive2/'
+            },
+            simple_directive3: {
+                port: 8081,
+                base: 'simple_directive3/'
+            },
+            simple_directive4: {
+                port: 8081,
+                base: 'simple_directive4/'
+            },
+            simple_directive5: {
+                port: 8081,
+                base: 'simple_directive5/'
+            },
+            simple_directive6: {
+                port: 8081,
+                base: 'simple_directive6/'
+            },
+            simple_directive7: {
+                port: 8081,
+                base: 'simple_directive7/'
+            },
+            checkboxes_in_grid: {
+                port: 8081,
+                base: 'checkboxes_in_grid/'
             }
         }
     });
