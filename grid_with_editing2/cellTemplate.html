@@ -1,0 +1,6 @@
+<div style="text-align: center">
+	<input type="checkbox" 
+		style="text-align:center;" 
+		ng-model="row.entity.hasKids" 
+		ng-click="$event.stopPropagation();grid.appScope.selectOne(row, $event)">
+</div>
