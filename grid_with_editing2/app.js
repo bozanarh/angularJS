@@ -8,6 +8,13 @@ app.directive("selectAllCheckbox", function() {
         templateUrl: 'headerCellTemplate.html'
     }
 });
+app.directive("selectOneCheckbox", function() {
+    return {
+        replace:true,
+        restrict: 'AE',
+        templateUrl: 'cellTemplate.html'
+    }
+});
 //app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($scope, $http, uiGridConstants) {
 app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($scope, $http, uiGridConstants) {
     $scope.numColumns = 0;
@@ -95,9 +102,8 @@ app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($sco
             displayName: 'Has Kids', 
             headerCellClass: 'header', 
             cellClass: 'header',
-            //headerCellTemplate: "headerCellTemplate.html",
             headerCellTemplate: '<select-all-checkbox></select-all-checkbox>',
-            cellTemplate: "cellTemplate.html"
+            cellTemplate: '<select-one-checkbox><select-one-checkbox>'
         },
         { 
             field: 'isCitizen', 
