@@ -51,6 +51,10 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'grid_with_editing/'
             },
+            grid_with_editing2: {
+                port: 8081,
+                base: 'grid_with_editing2'
+            },
             simple_directive: {
                 port: 8081,
                 base: 'simple_directive/'
@@ -79,14 +83,34 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'simple_directive7/'
             },
+            simple_directive8: {
+                port: 8081,
+                base: 'simple_directive8/'
+            },
+            simple_directive9: {
+                port: 8081,
+                base: 'simple_directive9/'
+            },
             checkboxes_in_grid: {
                 port: 8081,
                 base: 'checkboxes_in_grid/'
+            },
+            directive_book1: {
+                port: 8081,
+                base: 'directive_book1/'
+            },
+            directive_book2: {
+                port: 8081,
+                base: 'directive_book2/'
+            },
+            directive_book3: {
+                port: 8081,
+                base: 'directive_book3/'
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-connect');
-    grunt.registerTask('default', 'connect:ex1');
+    grunt.registerTask('default', 'connect:template');
 
 };

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<style type="text/css">
+	body {
+		background-color: #99ffcc;
+	} 
+</style>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+	<div ng-controller="myCtrl" ng-init="title='Hello world'">
+		<p> This example shows how directive works when scope is set to <b>true</b>.</br>
+		By setting scope to <b>true</b> scope is not shared between</br>parent (controller) and the directive. Any change in the parent scope </br>
+		stay in that scope only. Any change in the directive stay in the directive </br>scope only.
+		<p>
+		<b>NOTE:</b> If you press "Upgrade me" before pressing "Bob me", you will see "App 2.0" also in the</br>
+		Directive scope. That is because directive will inherit scope from parent. After that, </br>
+		when you press "Bob it", new scope.title variable will be assigned to the directive and any change </br>
+		to the parent (ctrl) scope will not be reflected in the directive and vice versa.
+		</p>
+		
+		</p>
+		<h2 id="appTitle">{{title}}</h2>
+		<p>----- Parent scope ----</p>
+		<button id="newAppTitle" ng-click="setAppTitle('App 2.0')">Upgrade me!</button>
+		<p>----- Directive scope ----</p>
+		<div my-scoped-directive>
+			<h4 id="directiveTitle">{{title}}</h4>
+			<button id="newDirTitle" ng-click="setDirectiveTitle('bob')">Bob it!</button>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>

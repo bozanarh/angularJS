@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<style type="text/css">
+	body {
+		background-color: #99ffcc;
+	} 
+</style>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+	<div ng-controller="myCtrl" ng-init="title='Hello world'">
+		<p> This example shows how directive works with default scope</br>
+		By setting scope to <b>false</b> (default one) scope becomes shared between</br>parent (controller) and the directive. Any change in the parent scope </br>
+		is propagated down to the directive and vice versa.
+		</p>
+		<h2 id="appTitle">{{title}}</h2>
+		<p>----- Parent scope ----</p>
+		<button id="newAppTitle" ng-click="setAppTitle('App 2.0')">Upgrade me!</button>
+		<p>----- Directive scope ----</p>
+		<div my-scoped-directive>
+			<h4 id="directiveTitle">{{title}}</h4>
+			<button id="newDirTitle" ng-click="setDirectiveTitle('bob')">Bob it!</button>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>

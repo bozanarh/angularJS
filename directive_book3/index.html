@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<style type="text/css">
+	body {
+		background-color: #99ffcc;
+	} 
+</style>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+	<p>
+	This example shows how isolate scope binding works.
+	<ul>
+	<li> Use @ when you want to pass one way <b>string</b></li>
+	<li> Use = when you want to have two way variable</li>
+	<li> Use & when you want to pass ctrl function to be invoked</li>
+	<p>
+	Note: With @ you are passing string. Whatever you specified in directive as attribute</br>
+	that will be converted into a string and passed to the directive. (see textVar)</br>
+	Directive can use it as own variable. If it is udated in Ctr change will be propagated to the directive</br>
+	However, if you change it in the directive, it will not be propagated to the Ctr. (see ChangeDirVars button)</br>
+	With = you are telling directive to use <b>attribute's value</b> to find out property on ctrl scope</br>
+	that binds to this directive scope variable. (see myTwoWay). Here directive attribute value is: twoWayVar</br>
+	So, whenever you refer to rwVar, you are actually referring to Ctrl: $scope.twoWayVar </br>
+	With &, you are telling directive to use <b>attribute value</b> as ctrl function to be invoked every time</br>
+	this local function gets invoked. (see action) 
+	</p>
+	</ul>
+	</p>
+	<div ng-controller="myCtrl" ng-init="title='Hello world'">
+		<p>----- Parent (Ctrl) scope ----</p>
+		Ctrl text = <b>{{textVar}}</b></br>
+		TwoWay binding = <b>{{twoWayVar}}</b></br>
+		<button id="newApp" ng-click="setCtrlVariables()">Ctrl Scope!</button>
+		<p>----- Directive scope ----</p>
+		<my-scoped-directive
+			my-text="{{textVar}}"
+			my-action="changeData()"
+			my-two-way="twoWayVar">
+		</my-scoped-directive>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
