@@ -49,3 +49,26 @@ My angularJS examples that I created while learning angular
 ### [grid_with_sorting](https://github.com/bozanarh/angularJS/tree/master/grid_with_sorting)
 - grid example - ilustrates how to do sorting on columns
 
+### [directive_book1](https://github.com/bozanarh/angularJS/tree/master/directive_book1)
+- Shows how to create directive with default scope (false).
+- scope is inherited from the controller that uses directive
+- any change in the controller will also make change in the directive and vice versa
+
+### [directive_book2](https://github.com/bozanarh/angularJS/tree/master/directive_book2)
+- Shows how to create directive with own private scope (true).
+- scope is inheriated from controller that uses directive
+- protype inheritance - directive shares scope until it makes a change in it.
+After that change in the directive's scope will not be reflected int ctrl,
+and vice versa
+
+### [directive_book3](https://github.com/bozanarh/angularJS/tree/master/directive_book3)
+- Shows how to create isolate scope
+- Shows how to use one way binding variables
+- Shows how to use two way binding variables
+- Shows how to pass callback from the controller to the directive
+- Use compile when you want to make changes in the DOM
+- Use link to link controller and directive variables
+
+
+
+
