@@ -15,18 +15,21 @@
   <body>
     <div ng-controller="MainCtrl">
       <h3>This example ilustrates how to use filtering on grid</h3>
-      <select-all-checkbox>This is in between</select-all-checkbox>
-      <br>
+      <!-- <select-all-checkbox>This is in between</select-all-checkbox>
+      <br> -->
       <button id='showFiltered' ng-click="showFiltered()" class="btn btn-success">Show Filtered</button>
       <br>
       <div id="grid1" ui-grid="gridOptions1" ui-grid-edit class="grid"></div>
+
+      <p> allSelected = {{allSelected}}</p>
+      <select-all-checkbox-b><select-all-checkbox-b>
       <p><b>There are {{ numColumns }} filtered columns:</b></p>
       <p ng-repeat="x in filteredRows">{{ x.entity}}</p>
       <p><b>Data saved on server:</b></p>
       <p ng-repeat="d in savedData">{{ d }}</p>
     </div>
     <script src="app.js"></script>
-    <script src="new_directive.js"></script>
+    <!--script src="newDirective.js"></script-->
   </body>
 
 </html>

@@ -2,5 +2,5 @@
 	<input type="checkbox" 
 		style="text-align:center;" 
 		ng-model="row.entity.hasKids" 
-		ng-click="$event.stopPropagation();grid.appScope.selectOne(row, $event)">
+		ng-click="$event.stopPropagation();grid.appScope.selectOne(row, $event)">{{row.entity.hasKids}}
 </div>

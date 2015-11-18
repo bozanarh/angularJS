@@ -3,13 +3,23 @@
 var app = angular.module('app', ['ngAnimate', 'ngTouch', 'ui.grid', 'ui.grid.edit']);
 app.directive("selectAllCheckbox", function() {
     return {
+        scope : false,
         replace:true,
         restrict: 'AE',
         templateUrl: 'headerCellTemplate.html'
     }
 });
+app.directive("selectAllCheckboxB", function() {
+    return {
+        scope : false,
+        replace:true,
+        restrict: 'AE',
+        templateUrl: 'headerCellTemplateB.html'
+    }
+});
 app.directive("selectOneCheckbox", function() {
     return {
+        scope : false,
         replace:true,
         restrict: 'AE',
         templateUrl: 'cellTemplate.html'
@@ -23,32 +33,43 @@ app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($sco
     $scope.savedData = [];
     $scope.allSelected = false;
 
-    $scope.selectAll = function(event){
-        //alert("Cao Papane all!");
-        $scope.changedData.length=0;
-        $scope.filteredRows = $scope.grid1Api.core.getVisibleRows($scope.grid1Api.grid);
-        $scope.numColumns = $scope.filteredRows.length;
-        if ($scope.filteredRows.length > 0) {
-            for (var i = 0; i < $scope.filteredRows.length; i++ ) {
-                var obj = $scope.filteredRows[i].entity;
-                obj.hasKids = event.currentTarget.checked;
-                $scope.changedData.push(obj);
-            }
-        } else {
-            for (var i = 0; i < $scope.gridOptions1.data; i++ ) {
-                var obj = $scope.gridOptions1.data[i];
-                obj.hasKids = event.currentTarget.checked;
-                $scope.changedData.push(obj);
-            }
-        }
-        var config = {
-                headers : {
-                    'Content-Type': 'application/json',
-                    'Accept':'application/json'
+    $scope.selectAll = function(val){
+        //var isChecked = event.currentTarget.checked;
+
+        var answer = confirm("Are you sure?");
+        if (answer) {
+            $scope.changedData.length=0;
+            $scope.filteredRows = $scope.grid1Api.core.getVisibleRows($scope.grid1Api.grid);
+            $scope.numColumns = $scope.filteredRows.length;
+            if ($scope.filteredRows.length > 0) {
+                for (var i = 0; i < $scope.filteredRows.length; i++ ) {
+                    var obj = $scope.filteredRows[i].entity;
+                    obj.hasKids = event.currentTarget.checked;
+                    obj.hasKids = val;
+                    //$scope.changedData.push(obj);
+                }
+            } else {
+                for (var i = 0; i < $scope.gridOptions1.data; i++ ) {
+                    var obj = $scope.gridOptions1.data[i];
+                    //obj.hasKids = event.currentTarget.checked;
+                    obj.hasKids = val;
+                    $scope.changedData.push(obj);
                 }
             }
-        $scope.saveData($scope.changedData, config);
-        console.dir($scope.changedData);
+            var config = {
+                    headers : {
+                        'Content-Type': 'application/json',
+                        'Accept':'application/json'
+                    }
+                }
+            $scope.saveData($scope.changedData, config);
+            console.dir($scope.changedData);
+        }else{
+            $scope.allSelected =  !val;
+            //$scope.allSelected = ! val;
+            /*$scope.grid1Api.core.notifyDataChange( uiGridConstants.dataChange.COLUMN );
+            $scope.grid1Api.core.refresh();*/
+        }
     };
    
     $scope.saveData = function(data, config){
@@ -61,14 +82,18 @@ app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($sco
     }
 
     $scope.selectOne = function(row, $event){
-        //alert("Cao Papane!" );
-        var isChecked = event.currentTarget.checked;
-        //on first unselect, ensure that clear isStandardAll is not active
-        if (! isChecked) $scope.allSelected = false;
-        $scope.changedData.length=0;
-        console.dir(row.entity);
-        $scope.changedData.push(row.entity);
-        $scope.saveData($scope.changedData);
+        var answer = confirm("Are you sure?");
+        if( answer ){        
+            var isChecked = event.currentTarget.checked;
+            //on first unselect, ensure that clear isStandardAll is not active
+            if (! isChecked) $scope.allSelected = false;
+            $scope.changedData.length=0;
+            console.dir(row.entity);
+            $scope.changedData.push(row.entity);
+            $scope.saveData($scope.changedData);
+        } else {
+            row.entity.hasKids = ! row.entity.hasKids;
+        }
     };
 
 
@@ -88,7 +113,7 @@ app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($sco
             field: 'name', 
             displayName: 'Name', 
             headerCellClass: 'header', 
-            cellClass: 'header' 
+            cellClass: 'headerCellTemplate'
         },
         { 
             field: 'gender', 
@@ -102,7 +127,7 @@ app.controller('MainCtrl', ['$scope', '$http', 'uiGridConstants', function ($sco
             displayName: 'Has Kids', 
             headerCellClass: 'header', 
             cellClass: 'header',
-            headerCellTemplate: '<select-all-checkbox></select-all-checkbox>',
+            headerCellTemplate: '<div ng-model="allSelected" select-all-checkbox></div>',
             cellTemplate: '<select-one-checkbox><select-one-checkbox>'
         },
         { 
