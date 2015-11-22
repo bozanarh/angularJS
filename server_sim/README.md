@@ -6,7 +6,7 @@ Use this to simulate server response back to the client
 - installed nodeJS
 
 ### Set up
-- install dependecies by running:
+- install dependecies (needs express) by running:
  npm install
 
 ### Run it
