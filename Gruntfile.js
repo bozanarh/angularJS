@@ -122,6 +122,10 @@ module.exports = function(grunt) {
             directive_book3: {
                 port: 8081,
                 base: 'directive_book3/'
+            },
+            directive_book4: {
+                port: 8081,
+                base: 'directive_book4/'
             }
         }
     });
