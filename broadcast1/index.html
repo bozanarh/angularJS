@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+<body>
+	<h3>Multi-Controller communication</h3>
+	<p>
+	<ul>
+	<li>This example illustrates how to pass msg from one controller to others</li>
+	<li>We do it through b-casting</li>
+	<li>Create shared service - factory function returns shared service obj</li>
+	<li>Notifier, calls service method to broadcast msg (uses $rootScope.$broadcast)</li>
+	<li>Substrcibers imlement $scope.$on where there wait for the event</li>
+	<li>When event happens, subscribers access service's shared object and read msg</li>
+	</ul>
+	</p>
+	<div ng-controller="myCtrl1">
+	<p>------ Controller 1 ----------</p>
+	{{ txt }}
+	<button ng-click="change()">Change</button>
+	</div>
+
+	<div ng-controller="myCtrl2">
+	<p>------ Controller 2 ----------</p>
+	{{ txt }}
+	</div>
+
+	<div ng-controller="myCtrl3">
+	<p>------ Controller 3 ----------</p>
+	{{ txt }}
+	</div>
+
+	<script src="myCtrl.js"></script>
+</body>
+</html>

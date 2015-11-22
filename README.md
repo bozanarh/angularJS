@@ -69,6 +69,12 @@ and vice versa
 - Use compile when you want to make changes in the DOM
 - Use link to link controller and directive variables
 
-
+### [broadcast1](https://github.com/bozanarh/angularJS/tree/master/broadcast1)
+- This example illustrates how to pass msg from one controller to others
+- We do it through b-casting
+- Create shared service - factory function returns shared service obj
+- Notifier, calls service method to broadcast msg (uses $rootScope.$broadcast)
+- Substrcibers imlement $scope.$on where there wait for the event
+- When event happens, subscribers access service's shared object and read msg
 
 
