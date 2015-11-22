@@ -70,6 +70,9 @@ and vice versa
 - Use compile when you want to make changes in the DOM
 - Use link to link controller and directive variables
 
+### [directive_book4](https://github.com/bozanarh/angularJS/tree/master/directive_book4)
+- Shows how to call controller function from the directive and how to pass arguments to it
+
 ### [broadcast1](https://github.com/bozanarh/angularJS/tree/master/broadcast1)
 - This example illustrates how to pass msg from one controller to others
 - We do it through b-casting
