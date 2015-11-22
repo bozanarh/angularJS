@@ -7,6 +7,18 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'template/'
             },
+            dialog: {
+                port: 8081,
+                base: 'dialog/'
+            },
+            dialog2: {
+                port: 8081,
+                base: 'dialog2/'
+            },
+            dialog3: {
+                port: 8081,
+                base: 'dialog3/'
+            },
             bindings: {
                 port: 8081,
                 base: 'bindings/'
@@ -94,6 +106,10 @@ module.exports = function(grunt) {
             checkboxes_in_grid: {
                 port: 8081,
                 base: 'checkboxes_in_grid/'
+            },
+            broadcast1: {
+                port: 8081,
+                base: 'broadcast1/'
             },
             directive_book1: {
                 port: 8081,
