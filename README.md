@@ -9,7 +9,7 @@ My angularJS examples that I created while learning angular
     - jshint
     - unit testing
 
-## You need data from server
+## If you need data from server
   - see [server_sim](https://github.com/bozanarh/angularJS/tree/master/server_sim)
 
 ## Code examples:
@@ -29,25 +29,26 @@ My angularJS examples that I created while learning angular
 
 ### [watch](https://github.com/bozanarh/angularJS/tree/master/watch)
 - shows how to use $watch
-- shows hot to call my very specific listener when certian variable changes
-- note you use "scope" without dollar in the $watch()
+- shows how to call my very specific listener when certian variable changes
+- note: you use "scope" without dollar in the $watch()
 
 ### [grid](https://github.com/bozanarh/angularJS/tree/master/grid)
-- simple grid example - ilustrates very basic usage of ui-grid
+- simple grid example - illustrates very basic usage of ui-grid
 - uses static data
 
 ### [eventHandling](https://github.com/bozanarh/angularJS/tree/master/eventHandling)
-- show how event handling with buttons in a table works
+- show how works event handling with buttons in a table
 - uses static data
 
 ### [simplest_grid](https://github.com/bozanarh/angularJS/tree/master/simplest_grid)
 - the simplest grid example with static data
 
 ### [grid_with_http_get](https://github.com/bozanarh/angularJS/tree/master/grid_with_http_get)
-- grid example - ilustrates how to obtain data from server through http get
+- grid example - illustrates how to obtain data from server through http get
+- note: you may want to run my simulator (see [server_sim](https://github.com/bozanarh/angularJS/tree/master/server_sim)
 
 ### [grid_with_sorting](https://github.com/bozanarh/angularJS/tree/master/grid_with_sorting)
-- grid example - ilustrates how to do sorting on columns
+- grid example - illustrates how to do sorting on columns
 
 ### [directive_book1](https://github.com/bozanarh/angularJS/tree/master/directive_book1)
 - Shows how to create directive with default scope (false).
