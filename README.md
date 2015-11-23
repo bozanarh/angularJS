@@ -73,6 +73,13 @@ and vice versa
 ### [directive_book4](https://github.com/bozanarh/angularJS/tree/master/directive_book4)
 - Shows how to call controller function from the directive and how to pass arguments to it
 
+### [directive_book5](https://github.com/bozanarh/angularJS/tree/master/directive_book5)
+- Shows how to use transclusion
+- caller of the directive inserts template (whose content is unknown to the directive) inside directive.
+- transcluded template deifned in index.html - surrounded by directive
+- directive defines where transluded elements goes
+
+
 ### [broadcast1](https://github.com/bozanarh/angularJS/tree/master/broadcast1)
 - This example illustrates how to pass msg from one controller to others
 - We do it through b-casting

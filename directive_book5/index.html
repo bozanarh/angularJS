@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<style type="text/css">
+	body {
+		background-color: #99ffcc;
+	} 
+</style>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+	<h3>Passing arguments from the directive to the controller function</h3>
+	<p>
+	This example shows how to invoke controller function from the directive
+	and how to pass parameters from directive to the controller
+	</p>
+	<p>
+	Pay attention to the following:
+	<ul>
+		<li>In index.html you have "ctrlHanlder", <b>NOT</b> ctrlHandler()</li>
+		<li>In directive you have defined controller because you need to do some processing</li>
+		<li>In the directive you are calling outer controller function(ctrlHandler) by
+		invoking $scope.add<b>()(argument)</b></li>
+	</ul>
+	</p>
+	<div ng-controller="myCtrl" ng-init="title='Hello world'">
+		<p>----- Parent (Ctrl) scope ----</p>
+		Message = <b>{{msg}}</b></br>
+		<p>----- Directive scope ----</p>
+		<my-scoped-directive
+			ctrl-func="ctrlHandler">
+			<div>
+			<p><b>
+			This is transcludeed txt: {{msg}}
+			</b></p>
+			</div>
+		</my-scoped-directive>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
