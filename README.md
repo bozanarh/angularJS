@@ -88,4 +88,6 @@ and vice versa
 - Substrcibers imlement $scope.$on where there wait for the event
 - When event happens, subscribers access service's shared object and read msg
 
+### [modal_dialog](https://github.com/bozanarh/angularJS/tree/master/modal_dialog)
+- Shows how to create simple yes/no dialog box and make it generic so it can be reused
 

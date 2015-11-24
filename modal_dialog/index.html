@@ -1,0 +1,22 @@
+
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div ng-controller="myCtrl">
+    <p> -------------- myCtrl ------------ </p>
+    <p> msg is: {{msg}} </p>
+    <button type="button" class="btn btn-default" ng-click="change()">Bcast</button>
+  </div>
+
+  <script src="dialog.service.js"></script>
+  <script src="testController.js"></script>
+</body>
+</html>
+
