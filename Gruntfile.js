@@ -11,6 +11,10 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'modal_dialog/'
             },
+            diag_in_dirs: {
+                port: 8081,
+                base: 'diag_in_dirs/'
+            },
             dialog: {
                 port: 8081,
                 base: 'dialog/'

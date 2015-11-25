@@ -91,3 +91,7 @@ and vice versa
 ### [modal_dialog](https://github.com/bozanarh/angularJS/tree/master/modal_dialog)
 - Shows how to create simple yes/no dialog box and make it generic so it can be reused
 
+### [diag_in_dirs](https://github.com/bozanarh/angularJS/tree/master/diag_in_dirs)
+- Shows how to create simple yes/no dialog box as a service and how to use it 
+inside controller or directive.
+
