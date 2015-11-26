@@ -95,3 +95,6 @@ and vice versa
 - Shows how to create simple yes/no dialog box as a service and how to use it 
 inside controller or directive.
 
+### [controller_defs](https://github.com/bozanarh/angularJS/tree/master/controller_defs)
+- Shows diff ways of defining controller and their purpose
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang=”en”>
+<meta charset=”UTF-8″>
+<title>InStep Movie Hunter</title>
+<!– Use the Content Delivery Network (CDN) –>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body ng-app="movieHunter">
+    <div class="row  bg-primary">
+        <div class="col-md-6">Title</div>
+        <div class="col-md-2">Director</div>
+        <div class="col-md-2">Release Date</div>
+        <div class="col-md-2">Rating</div>
+    </div>
+    <div class="row" ng-controller="SearchByMovieCtrl">
+        <div class="col-md-6">{{movie.title}}</div>
+        <div class="col-md-2">{{movie.director}}</div>
+        <div class="col-md-2">{{movie.date}}</div>
+        <div class="col-md-2">{{movie.mpaa}}</div>
+    </div>
+
+    <script>
+        /*
+        //Option 1 - BAD
+        // - controller is defined in global space
+        // - will not work well if minified
+        var app = angular.module("movieHunter", []);
+        function SearchByMovieCtrl($scope) {
+            $scope.msg = "Hello world";
+            $scope.movie = {
+                title: 'The Fellowship of the Ring',
+                director: 'Jackson',
+                date: '2001-12-19',
+                mpaa: 'PG-13'
+            }
+        };
+        app.controller("SearchByMovieCtrl",
+            SearchByMovieCtrl);
+        */
+        /*
+        //Option 2 - BAD
+        //- ctrl defined as function expression
+        //problems:
+        // - ctrl function expression is in global space
+        // - will not work well if minified
+        var app = angular.module("movieHunter", []);
+        var SearchByMovieCtrl = function ($scope) {
+            $scope.msg = "Hello world";
+            $scope.movie = {
+                title: 'The Fellowship of the Ring',
+                director: 'Jackson',
+                date: '2001-12-19',
+                mpaa: 'PG-13'
+            }
+        };
+        app.controller("SearchByMovieCtrl",
+            SearchByMovieCtrl);
+        */
+        //Option 3 - works well if minified
+        // - ctrl function in global space
+        //works if minified (see down, where you instantiate ctrl, not here at the top),
+        //this works with minifier because you are passing to the ctrl:
+        //array containing list of parameters + ctrl function
+        //minifier does not minify aguments of an array and when array is passed
+        //angular will relay on the array to find dependiencies and inject them
+        /*
+        var app = angular.module("movieHunter", []);
+        function SearchByMovieCtrl($scope) {
+            $scope.msg = "Hello world";
+            $scope.movie = {
+                title: 'The Fellowship of the Ring',
+                director: 'Jackson',
+                date: '2001-12-19',
+                mpaa: 'PG-13'
+            }
+        };
+        app.controller("SearchByMovieCtrl", ["$scope", SearchByMovieCtrl]);
+        */
+        // Option 4 - ctrl with IFFI (immediatey invoked function expression)
+        // - ctrl is not global any more, because all varibale and functon defined inside iffi
+        //   are local to that function
+        /*
+        (function(){
+            var app = angular.module("movieHunter", []);
+            function SearchByMovieCtrl($scope) {
+                $scope.msg = "Hello world";
+                $scope.movie = {
+                    title: 'The Fellowship of the Ring',
+                    director: 'Jackson',
+                    date: '2001-12-19',
+                    mpaa: 'PG-13'
+                }
+            };
+            app.controller("SearchByMovieCtrl", ["$scope", SearchByMovieCtrl]);
+        })();
+        */
+        //This is actually the best appruch
+        (function(angular){
+            angular.module("movieHunter", [])
+            .controller("SearchByMovieCtrl", ["$scope", function ($scope) {
+                $scope.msg = "Hello world";
+                $scope.movie = {
+                    title: 'The Fellowship of the Ring',
+                    director: 'Jackson',
+                    date: '2001-12-19',
+                    mpaa: 'PG-13'
+                }
+            }]);
+            
+        }(angular));
+        
+    </script>
+</body>
+</html>

@@ -7,6 +7,10 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'template/'
             },
+            controller_defs: {
+                port: 8081,
+                base: 'controller_defs/'
+            },
             modal_dialog: {
                 port: 8081,
                 base: 'modal_dialog/'
