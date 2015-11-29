@@ -98,3 +98,9 @@ inside controller or directive.
 ### [controller_defs](https://github.com/bozanarh/angularJS/tree/master/controller_defs)
 - Shows diff ways of defining controller and their purpose
 
+### [promises](https://github.com/bozanarh/angularJS/tree/master/promises)
+- Very basic example of promises (runs only once)
+
+### [promises](https://github.com/bozanarh/angularJS/tree/master/promises)
+- Shows how to chain promises
+

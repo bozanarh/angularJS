@@ -7,6 +7,14 @@ module.exports = function(grunt) {
                 port: 8081,
                 base: 'template/'
             },
+            promises: {
+                port: 8081,
+                base: 'promises/'
+            },
+            promises2: {
+                port: 8081,
+                base: 'promises2/'
+            },
             controller_defs: {
                 port: 8081,
                 base: 'controller_defs/'
