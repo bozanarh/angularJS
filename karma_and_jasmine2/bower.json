@@ -1,0 +1,27 @@
+{
+  "name": "karma_and_jasmin1",
+  "description": "Karma and Jasmin tests",
+  "main": "",
+  "authors": [
+    "Bozana Radenkovic-Hadzic <bozana@raritan.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bozanarh/angularJS",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "angular-mocks": "~1.4.8",
+    "karma": "~0.4.6",
+    "jasmine-core": "~2.3.4",
+    "karma-jasmine": "~0.3.6",
+    "karma-chrome-launcher": "~0.2.2"
+  }
+}
